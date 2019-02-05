@@ -1,0 +1,3 @@
+---
+authclientconfig::package_name: 'auth-client-config'
+authclientconfig::package_ensure: 'present'
