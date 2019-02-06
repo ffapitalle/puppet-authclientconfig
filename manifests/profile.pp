@@ -7,10 +7,10 @@
 #     source => "puppet:///my_module/example_profile",
 #   }
 define authclientconfig::profile (
-  $profile     = $name,
-  $profile_dir = '/etc/auth-client-config/profile.d/',
-  $source      = undef,
-  $enabled     = true,
+  String $profile     = $name,
+  String $profile_dir = '/etc/auth-client-config/profile.d/',
+  String $source      = undef,
+  Boolean $enabled    = true,
 ) {
 
   unless $source {
