@@ -2,9 +2,9 @@
   "name": "puppet-authclientconfig",
   "version": "0.1.0",
   "author": "Federico Fapitalle",
-  "summary": "",
+  "summary": "This module manages profiles, and allow to enable or disable them using auth-client-config.",
   "license": "Apache-2.0",
-  "source": "",
+  "source": "https://github.com/ffapitalle/puppet-authclientconfig",
   "dependencies": [
     {
       "name": "puppetlabs/stdlib",
