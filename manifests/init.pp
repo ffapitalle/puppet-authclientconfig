@@ -5,8 +5,8 @@
 # @example
 #   include authclientconfig
 class authclientconfig (
-  $package_name,
-  $package_ensure,
+  String $package_name,
+  String $package_ensure,
 ) {
   package { $package_name:
     ensure => $package_ensure,
