@@ -19,7 +19,7 @@ define authclientconfig::profile (
 
   contain authclientconfig
 
-  $action = bool2str($enabled, "enable", "disable")
+  $action = bool2str($enabled, 'enable', 'disable')
 
   file { "profile_${profile}":
     path   => "${profile_dir}/${profile}-acc-profile",
@@ -27,13 +27,17 @@ define authclientconfig::profile (
     notify => Exec["${action}_profile"],
   }
 
-  exec { 'enable_profile':
-    command => "/usr/sbin/auth-client-config -p ${profile} -t nss",
-    refreshonly => true,
-  }
-
-  exec { 'disable_profile':
-    command => "/usr/sbin/auth-client-config -p ${profile} -t nss -r",
-    refreshonly => true,
+  if $enabled {
+    exec { 'enable_profile':
+      command => "/usr/sbin/auth-client-config -p ${profile} -t nss",
+      require => File["profile_${profile}"],
+      unless  => "/usr/sbin/auth-client-config -p ${profile} -t nss -s",
+    }
+  } else {
+    exec { 'disable_profile':
+      command => "/usr/sbin/auth-client-config -p ${profile} -t nss -r",
+      require => File["profile_${profile}"],
+      onlyif  => "/usr/sbin/auth-client-config -p ${profile} -t nss -s",
+    }
   }
 }
