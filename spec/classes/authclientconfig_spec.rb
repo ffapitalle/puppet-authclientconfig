@@ -6,7 +6,7 @@ describe 'authclientconfig' do
       let(:facts) { os_facts }
 
       it { is_expected.to compile }
-      it { is_expected.to contain_package('auth-client-config').with(ensure: 'present')
+      it { is_expected.to contain_package('auth-client-config').with(ensure: 'present') }
     end
   end
 end
