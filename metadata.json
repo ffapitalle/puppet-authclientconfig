@@ -1,6 +1,6 @@
 {
   "name": "ffapitalle-authclientconfig",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "author": "Federico Fapitalle",
   "summary": "This module manages profiles, and allow to enable or disable them using auth-client-config.",
   "license": "Apache-2.0",
