@@ -22,9 +22,10 @@ define authclientconfig::profile (
   $action = bool2str($enabled, 'enable', 'disable')
 
   file { "profile_${profile}":
-    path   => "${profile_dir}/${profile}-acc-profile",
-    source => $source,
-    notify => Exec["${action}_profile"],
+    path    => "${profile_dir}/${profile}-acc-profile",
+    source  => $source,
+    notify  => Exec["${action}_profile"],
+    require => Class[authclientconfig],
   }
 
   if $enabled {
