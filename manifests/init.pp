@@ -2,6 +2,9 @@
 #
 # @summary This module manages to install auth-client-config and enable/disable auth profiles
 #
+# @param package_name set the package name
+# @param package_ensure package version to install or present / absent
+#
 # @example
 #   include authclientconfig
 class authclientconfig (

@@ -2,6 +2,11 @@
 #
 # @summary Defines and enable or disable a pam and NSS profile
 #
+# @param profile name of the profile
+# @param profile_dir root directory for profile files
+# @param source source file specification
+# @param enabled whether to enable or disable this profile
+#
 # @example
 #   authclientconfig::profile { 'profile_name': 
 #     source => "puppet:///my_module/example_profile",
