@@ -33,13 +33,13 @@ The following parameters are available in the `authclientconfig` class.
 
 Data type: `String`
 
-
+set the package name
 
 ##### `package_ensure`
 
 Data type: `String`
 
-
+package version to install or present / absent
 
 ## Defined types
 
@@ -65,7 +65,7 @@ The following parameters are available in the `authclientconfig::profile` define
 
 Data type: `String`
 
-
+name of the profile
 
 Default value: $name
 
@@ -73,7 +73,7 @@ Default value: $name
 
 Data type: `String`
 
-
+root directory for profile files
 
 Default value: '/etc/auth-client-config/profile.d/'
 
@@ -81,7 +81,7 @@ Default value: '/etc/auth-client-config/profile.d/'
 
 Data type: `String`
 
-
+source file specification
 
 Default value: `undef`
 
@@ -89,7 +89,7 @@ Default value: `undef`
 
 Data type: `Boolean`
 
-
+whether to enable or disable this profile
 
 Default value: `true`
 
